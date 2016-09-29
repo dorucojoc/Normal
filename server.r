@@ -1,10 +1,12 @@
 library(shiny)
 
 z<-signif(sort(runif(n=2,min=-5,max=5)), 2) ## This was added, everything else stayed
-mean <- round(runif(n = 1, min = -100, max = 100), digits = 1)
+mean <- round(runif(n = 1, min = 1, max = 100), digits = 1) ## Changed the minimum of the mean to 1 - makes more sense to have positive values 
+# mean <- round(runif(n = 1, min = -100, max = 100), digits = 1)
 sd <- round(runif(n = 1, min = 1, max = 20), digits = 0)
 bounds<-mean+(z * sd)
 
+sd_bound <- z ## This replaces the sd_bounds below, which seemed to be z scores, with the z score
 # sd_bound <- signif(sort(runif(n = 2, min = -4, max = 4)), 3)
 # bounds <- mean + (sd_bound * sd)
 
