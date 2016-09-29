@@ -1,9 +1,12 @@
 library(shiny)
 
+z<-signif(sort(runif(n=2,min=-5,max=5)), 2) ## This was added, everything else stayed
 mean <- round(runif(n = 1, min = -100, max = 100), digits = 1)
 sd <- round(runif(n = 1, min = 1, max = 20), digits = 0)
-sd_bound <- signif(sort(runif(n = 2, min = -4, max = 4)), 3)
-bounds <- mean + (sd_bound * sd)
+bounds<-mean+(z * sd)
+
+# sd_bound <- signif(sort(runif(n = 2, min = -4, max = 4)), 3)
+# bounds <- mean + (sd_bound * sd)
 
 normal_plot <- function(mean, sd, lb, ub) {
   ## finding the x and y coordinates for plotting
